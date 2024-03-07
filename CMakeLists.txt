@@ -44,9 +44,6 @@ target_link_libraries(call_center PRIVATE imgui sfml-system sfml-window sfml-gra
 # Подключение SQLite3
 target_include_directories(call_center PRIVATE ${SQLite3_INCLUDE_DIR})
 
-# Копирование файлов из requirements в директорию сборки
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/requirements/" DESTINATION "${CMAKE_BINARY_DIR}")
-#file(COPY "${SQLiteCpp_DLL}" DESTINATION "${CMAKE_BINARY_DIR}")
 add_custom_command(
     TARGET call_center POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy
